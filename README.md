@@ -9,15 +9,22 @@ Customized logger for go(GoLang) based on go built-in logger with the following 
 <div align=left>
 	<img src="./example.png"/>
 </div>
+* Get the module
+
+```go
+go get github.com/lgangkai/golog
+```
 * Create a logger
 
 ```go
+import "github.com/lgangkai/golog"
+
 // default logger with root path: "logs", log file name: "log"
 // trace key: traceKey, expire day: 7
-logger := Default()
+logger := golog.Default()
 
 // or define each field by your self
-logger := NewLogger(true, "logs", "log", "traceKey", 7)
+logger := golog.NewLogger(true, "logs", "log", "traceKey", 7)
 ```
 * Wrap context of your previous context with trace data from the beginning of your service. You can define you traceKey and trace date should be presented using a map.
 
